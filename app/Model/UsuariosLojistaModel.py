@@ -10,10 +10,10 @@ class Lojista(Base, UsuarioModel.Usuario):
   id = Column(Integer, primary_key=True, nullable = False)
   
   saldo = Column(Float, nullable=False)
+  senha = Column(String(255) ,nullable=False)
   nome_completo = Column(String(255), nullable=False)
   cnpj   = Column(String(15), unique=True ,nullable=False)
   email = Column(String(255), unique=True ,nullable=False)
-  senha = Column(String(15), unique=True ,nullable=False)
 
   def __init__(self, cnpj : str, email : str, senha : str, nome_completo : str, saldo : float = 0):
     
