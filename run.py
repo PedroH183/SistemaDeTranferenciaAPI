@@ -1,17 +1,24 @@
 from flask import Flask
-from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, scoped_session
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@localhost:5432/archlimpa'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"], echo=True)
+session = scoped_session(
+  sessionmaker( bind=engine, autocommit=False, autoflush=False )
+)
 
-from app.Controller.parentsController import *
-from app.Model.FilhoTable import Filho
-from app.Model.GenitorTable import Genitor
+Base = declarative_base()
+
+from app.Controller.usuarioController import *
+from app.Controller.lojistaController import *
+from app.Model.UsuariosComunModel import UsuarioComun
+from app.Model.UsuariosLojistaModel import Lojista
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="5000", debug=True)
