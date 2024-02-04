@@ -1,5 +1,6 @@
 from flask import jsonify
 from app.Domain.usuariosDomain import UsuarioService
+from app.Model import UsuariosComunModel
 
 
 class UsuarioControllerAdapter:

@@ -18,7 +18,7 @@ class UsuarioComun(Base, UsuarioModel.Usuario):
   def __init__(self, cpf : str, email : str, senha : str, nome_completo : str, saldo : float = 0):
     
     self.cpf = cpf
-    UsuarioModel.__init__(self, nome_completo, cpf, email, senha, saldo)
+    UsuarioModel.__init__(self, nome_completo, cpf, email, senha, saldo) # type: ignore
 
   def transferir_dinheiro(self, quantidade : int, destinatario ):
     return ServiceTransferencia.transferencia_dinheiro(quantidade, self, destinatario)

@@ -18,7 +18,7 @@ class Lojista(Base, UsuarioModel.Usuario):
   def __init__(self, cnpj : str, email : str, senha : str, nome_completo : str, saldo : float = 0):
     
     self.cnpj = cnpj
-    UsuarioModel.__init__(self, nome_completo, email, senha, saldo)
+    UsuarioModel.__init__(self, nome_completo, email, senha, saldo) # type: ignore
 
   def transferir_dinheiro(self, quantidade : int, destinatário ):
     return ServiceTransferencia.transferencia_dinheiro(quantidade, self, destinatário)
