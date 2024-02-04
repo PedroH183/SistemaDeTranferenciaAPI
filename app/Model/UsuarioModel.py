@@ -1,3 +1,4 @@
+
 class Usuario:
   """
     Classe que contém a métodos e atributos comuns entre usuarios e lojista.
@@ -12,9 +13,10 @@ class Usuario:
 
   def to_dict(self):
     data = {}
-    data["id"] = self.id
-    data["cpf"] = self.cpf
     data["email"] = self.email
+    data["id"] = self.id # type: ignore
+    data["cpf"] = self.cpf # type: ignore
+    data["cnpj"] = self.cnpj # type: ignore
     data["nome_completo"] = self.nome_completo
     
     return data

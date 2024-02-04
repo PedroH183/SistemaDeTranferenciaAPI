@@ -11,8 +11,8 @@ class ServiceTransferencia:
   def transferencia_dinheiro( quantidade, remetente, beneficiario ):
     pass
 
-  def check_saldo_remetente( remetente ):
+  def _check_saldo_remetente(self,  remetente ):
     pass
 
-  def check_destinatario( beneficiario ):
+  def _check_destinatario(self, beneficiario ):
     pass

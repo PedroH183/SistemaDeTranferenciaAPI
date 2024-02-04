@@ -1,6 +1,6 @@
 from run import session
 from app.Model.UsuariosLojistaModel import Lojista
-from app.Model.UsuariosComunModel import UsuarioModel
+from app.Model.UsuariosComunModel import UsuarioComun
 
 
 class UsuarioService:
@@ -10,27 +10,27 @@ class UsuarioService:
   """
 
   @classmethod
-  def returnAllLojistas(self):
+  def returnAllLojistas(cls):
     return session.query(Lojista).all()
   
   @classmethod
-  def returnViewLojista(self, _id: int):
+  def returnViewLojista(cls, _id: int):
     return session.query(Lojista).get(_id)
 
   @classmethod
-  def deleteLojista(self, _id):
-    userToDelete = self.returnViewLojista( _id )
+  def deleteLojista(cls, _id):
+    userToDelete = cls.returnViewLojista( _id )
     return session.delete(userToDelete)
   
   @classmethod
-  def returnAllUsuarioComun(self):
-    return session.query(UsuarioModel).all()
+  def returnAllUsuarioComun(cls):
+    return session.query(UsuarioComun).all() 
   
   @classmethod
-  def returnViewUsuarioComun(self, _id: int):
-    return session.query(UsuarioModel).get(_id)
+  def returnViewUsuarioComun(cls, _id: int):
+    return session.query(UsuarioComun).get(_id)
 
   @classmethod
-  def deleteUsuarioComun(self, _id):
-    userToDelete = self.returnViewUsuarioComun( _id )
+  def deleteUsuarioComun(cls, _id):
+    userToDelete = cls.returnViewUsuarioComun( _id )
     return session.delete(userToDelete)
