@@ -1,8 +1,7 @@
 from flask import Flask
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy.orm import sessionmaker, scoped_session, declarative_base
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@localhost:5432/archlimpa'
@@ -21,4 +20,4 @@ from app.Model.UsuariosComunModel import UsuarioComun
 from app.Model.UsuariosLojistaModel import Lojista
 
 if __name__ == "__main__":
-  app.run(host="0.0.0.0", port="5000", debug=True)
+  app.run(host="0.0.0.0", port="5000", debug=True) # type: ignore
