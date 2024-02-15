@@ -2,6 +2,8 @@
 
 O objetivo da arquitetura hexagonal é isolar as classes de negocios de todo o restante do ambiente, isso promove uma arquitetura quase que independente de tecnologia e facilita a implementação de testes.
 
+`Esse projeto foi contruído com base no desafio [https://github.com/PicPay/picpay-desafio-backend] do PicPay`
+
 ## Como fazer o setup das tabelas
 É ligeiramente complicado fazer o setup das tabelas sem o uso das migrates então deixei detalhado abaixo o procedimento.
 
