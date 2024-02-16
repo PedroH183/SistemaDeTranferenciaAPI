@@ -1,6 +1,5 @@
 from run import engine, Base
-from app.Domain.UsuariosComumModel import UsuarioComum
-from app.Domain.UsuariosLojistaModel import Lojista
+
 
 def init_db():
     """
