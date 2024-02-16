@@ -1,7 +1,5 @@
 from run import Base
-from app.Domain import UsuarioModel
 from sqlalchemy import Column, Integer, String, Float
-from app.Domain.transferenciaDomain import ServiceTransferencia
 
 
 class Lojista(Base):
