@@ -4,8 +4,8 @@ class ExceptionsFactory:
     """
 
     @classmethod
-    def ExceptionReturn(cls, verbo: str, subs: str):
-        return {"message": f"Não foi possível {verbo} o {subs}", "error": True}, 404
+    def ExceptionReturn(cls, verbo: str, objeto: str, stts_code = 400):
+        return {"message": f"Não foi possível {verbo} o {objeto}", "error": True}, stts_code
 
 
 class SuccessFactory:
@@ -14,5 +14,5 @@ class SuccessFactory:
     """
 
     @classmethod
-    def SuccessReturn(cls, verbo: str, subs: str):
-        return {"message": f"Com sucesso foi {verbo} o {subs}!", "error": False}, 200
+    def SuccessReturn(cls, verbo: str, subs: str, stts_code = 200):
+        return {"message": f"Com sucesso foi {verbo} o {subs}!", "error": False}, stts_code
