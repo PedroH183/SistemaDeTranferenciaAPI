@@ -29,3 +29,7 @@ def view_get_usuario(_id):
 @app.route('/usuario/delete/<int:_id>', methods=['DELETE'])
 def delete_usuario(_id):
     return UsuarioControllerAdapter.delete_usuario(_id)
+
+@app.route('/transferirDinheiro', methods=["POST"])
+def transferencia_by_user():
+    return UsuarioControllerAdapter.transferirDinheiro(request.get_json())
