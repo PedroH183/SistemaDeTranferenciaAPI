@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@localhost:5432/archlimpa'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"], echo=True)
+engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"], echo=False)
 session = scoped_session(
     sessionmaker(bind=engine, autocommit=False, autoflush=False)
 )
