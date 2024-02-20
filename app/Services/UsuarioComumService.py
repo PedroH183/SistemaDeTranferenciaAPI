@@ -1,4 +1,3 @@
-from statistics import quantiles
 from psycopg2 import IntegrityError
 from app.Domain.Usuarios.UsuariosLojistaModel import Lojista
 from app.Services.UsuarioLojistaService import UsuarioLojistaService
@@ -12,7 +11,7 @@ class UsuarioComumService:
     """
     Classe que representa os serviços disponíveis para um usuario comum.
     Reponsável por implementar as regras de negocio.
-  """
+    """
 
     serviceLojista : UsuarioLojistaService = UsuarioLojistaService()
 
@@ -50,11 +49,11 @@ class UsuarioComumService:
 
         try:
             _session.commit()
-            return SuccessFactory.SuccessReturn("atualizar", "lojista")
+            return SuccessFactory.SuccessReturn("atualizar", "usuario")
 
         except IntegrityError as err:
             print(err)
-            return ExceptionsFactory.ExceptionReturn("atualizar", "lojista")
+            return ExceptionsFactory.ExceptionReturn("atualizar", "usuario")
 
     @classmethod
     def returnAllUsuarioComum(cls) -> list[UsuarioComum]:
