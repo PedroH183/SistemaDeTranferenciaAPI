@@ -28,3 +28,7 @@ class UsuarioControllerAdapter:
     @staticmethod
     def delete_usuario(_id):
         return UsuarioComumService.deleteUsuarioComum(_id)
+
+    @staticmethod
+    def transferirDinheiro(data_request : dict):
+        return UsuarioComumService.transferencia(data_request)
