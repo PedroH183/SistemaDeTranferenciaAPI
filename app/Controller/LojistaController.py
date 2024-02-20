@@ -1,18 +1,20 @@
 from run import app
-from app.Adapter.LojistaAdapter import LojistaControllerAdapter
 from flask import request
+from app.Adapter.LojistaAdapter import LojistaControllerAdapter
+from app.Schemas.UsuarioLojistaSchema import LojistaAddSchema, LojistaEditSchema
 
 
 @app.route('/lojista/add', methods=["POST"])
 def create_usuario_lojista():
-    data = request.get_json()
-    response = LojistaControllerAdapter.create_lojista(data)
-    return response
+    data = LojistaAddSchema(**request.get_json())
+    data = data.model_dump()
+    return LojistaControllerAdapter.create_lojista(data)
 
 
 @app.route("/lojista/update/<int:id>", methods=["PUT"])
 def update_usuario_lojista(id):
-    data = request.get_json()
+    data = LojistaEditSchema(**request.get_json())
+    data = data.model_dump()
     return LojistaControllerAdapter.update_lojista(id, data)
 
 
