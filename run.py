@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session, declarative_base
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@localhost:5432/archlimpa'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@banco:5432/archlimpa'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"], echo=False)
