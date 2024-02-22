@@ -1,11 +1,14 @@
 from flask import Flask
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session, declarative_base
+from settings import POSTGRES_DB, POSTGRES_HOST, POSTGRES_PASSWORD, POSTGRES_PORT, POSTGRES_USER
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:1234@banco:5432/archlimpa'
+
+URI_DATABASE = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}'
+
+app.config["SQLALCHEMY_DATABASE_URI"] = URI_DATABASE
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"], echo=False)
