@@ -43,11 +43,11 @@ A Api dispõem dos seguintes endpoints :
 ```bash
   ## data body of a commom user
 {
-  "saldo" : 0
-  "senha" : "1234",
+  "saldo" : 123
+  "senha" : "123",
   "cpf" : "111.114.574-25",
-  "email" : "schema@gmail.com",
-  "nome_completo" : "Schema Tester",
+  "email" : "pedro@gmail.com",
+  "nome_completo" : "Pedro Henrique",
 }
 ```
 ### Api Lojista
@@ -60,11 +60,11 @@ A Api dispõem dos seguintes endpoints :
 ### Body
 ```bash
 {
-  "saldo" : 321,
+  "saldo" : 123,
   "senha" : "1234",
-  "nome_completo" : "Pedro Ricardo",
+  "nome_completo" : "Pedro Henrique",
   "cnpj" : "31.231.231/2001-99",
-  "email" : "ricardo@email.com"
+  "email" : "pedro@email.com"
 }
 ```
 
