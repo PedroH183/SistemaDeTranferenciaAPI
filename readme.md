@@ -8,9 +8,8 @@ O objetivo da arquitetura limpa é isolar as classes de negocios de todo o resta
 ## Setup da aplicação
 
 - > Clone o repositório
-- > Edite as variáveis de conexão com o banco de dados e certifique-se que ele existe. 
-- > Na raiz do projeto rode o comando : `python3 initialize.py` para fazer o setup das tabelas.
-- > Por fim basta executar a aplicação com o `python3 run.py` para iniciar a aplicação.
+- > Edite as variáveis de conexão com o banco de dados no arquivo `settings.py` e certifique-se que ele existe. 
+- > Na raiz do projeto rode o comando `docker compose up` esse comando criará todo o boilerplate necessário para a aplicação e após a aplicação estará rodando.
 
 ## Estrututra de Pastas
 
@@ -23,6 +22,50 @@ O objetivo da arquitetura limpa é isolar as classes de negocios de todo o resta
   │   │   └── Usuarios
   │   ├── ReturnClass
   │   └── Services
+  │── settings.py
+  │── run.py
   └── venv
-
 ```
+
+## Api Endpoints
+
+A Api dispõem dos seguintes endpoints : 
+
+### Api Usuario Comum
+```
+  POST   /usuario/add - Create a new commom user
+  GET    /usuario/all - Retrieve all commoms users
+  GET    /usuario/view/{id} - Updates a commom user
+  DELETE /usuario/delete/{id} - Delete a commom user
+  POST   /usuario/transferirDinheiro - transferir 
+```
+### Body 
+```bash
+  ## data body of a commom user
+{
+  "saldo" : 0
+  "senha" : "1234",
+  "cpf" : "111.114.574-25",
+  "email" : "schema@gmail.com",
+  "nome_completo" : "Schema Tester",
+}
+```
+### Api Lojista
+```bash
+  POST   /lojista/add - Create a new shopkeeper
+  GET    /lojista/all - Retrieve all shopkeepers
+  GET    /lojista/view/{id} - Updates a shopkeeper
+  DELETE /lojista/delete/{id} - Delete a shopkeeper
+```
+### Body
+```bash
+{
+  "saldo" : 321,
+  "senha" : "1234",
+  "nome_completo" : "Pedro Ricardo",
+  "cnpj" : "31.231.231/2001-99",
+  "email" : "ricardo@email.com"
+}
+```
+
+
