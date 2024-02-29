@@ -7,7 +7,7 @@
 
 - > Clone o repositório
 - > Edite as variáveis de conexão com o banco de dados no arquivo `settings.py` e certifique-se que ele existe. 
-- > Na raiz do projeto rode o comando `docker compose up` esse comando criará todo o boilerplate necessário para a aplicação e após a aplicação estará rodando.
+- > Na raiz do projeto rode o comando `docker compose up` esse comando criará todo o ambiente necessário para a aplicação e após a aplicação estará rodando.
 
 ## Estrututra de Pastas
 
